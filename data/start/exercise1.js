@@ -13,9 +13,14 @@
 // TODO 1c: on a new line under the variables, change duration: duration = "2n";  Play. Hear the difference?
 // TODO 1d: try the same with note: note = "D4";  Read the error in the console. Then delete that line.
 
+const note = "C4";
+let duration = "8n";
+
 function exercise1(start) {
-  synth.triggerAttackRelease("C4", "8n", start);
-  synth.triggerAttackRelease("E4", "8n", start + 0.5);
+  synth.triggerAttackRelease(note, duration, start);
+  duration = "4n";
+  synth.triggerAttackRelease("E4", duration, start + 0.5);
+  // note = "E4"; // ERROR: Assignment to constant variable.
   synth.triggerAttackRelease("G4", "8n", start + 1);
 }
 
